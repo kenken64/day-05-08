@@ -43,12 +43,16 @@ app.post("/sample", function (req, res) {
         ok: true
     })
 });
+app.use("/page-that-throw-error", function (req, res) {
+    console.log("/page accessed")
+    throw new Error("SIMPLE CUSTOM ERROR");
+});
 
 
 
 // Solution 5a - 404 Handler
 app.use(function (req, res) {
-    res.redirect("/404.html");
+    res.redirect("/page-not-found.html");
 });
 
 // Solution 5b - 501 or error Handler
