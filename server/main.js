@@ -12,6 +12,17 @@ console.log("Serving Client folder at ", CLIENT_FOLDER);
 
 app.use(express.static(CLIENT_FOLDER));
 
+
+app.use(function (req, res) {
+    res.redirect("/page-not-found.html");
+});
+
+app.use(function (err, req, res, next) {
+    res.redirect("/501.html");
+});
+
+
+
 // Start server on PORT
 app.listen(PORT, function () {
     console.log("Running server on http://localhost:%s", PORT);
