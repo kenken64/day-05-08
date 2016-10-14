@@ -30,17 +30,17 @@ app.get("/showReq", function (req, res) {
 
 app.get("/sample", function (req, res) {
     res.json({
-        ok: true
+        get: true
     })
 });
 app.put("/sample", function (req, res) {
     res.json({
-        ok: true
+        put: true
     })
 });
 app.post("/sample", function (req, res) {
     res.json({
-        ok: true
+        post: true
     })
 });
 app.use("/page-that-throw-error", function (req, res) {
